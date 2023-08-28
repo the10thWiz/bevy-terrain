@@ -1,0 +1,16 @@
+[package]
+name = "bevy-terrain"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = { version = "0.8", features = ["mp3"] }
+bitfield = "0.14.0"
+bytemuck = { version = "*", features = ["derive"] }
+serde = "*"
+serde_json = "*"
+anyhow = "*"
+atomic_enum = "0.2.0"
+enum-map = "2.4.0"
