@@ -1,28 +1,16 @@
 use bevy::prelude::*;
 
+mod terrain;
+use terrain::{TerrainPlugin, TerrainManager};
+
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_plugin(TerrainPlugin::new())
+        .add_plugins(TerrainPlugin::new())
+        .add_systems(Startup, init_terrain)
         .run()
 }
 
-pub struct TerrainPlugin {}
-
-impl Default for TerrainPlugin {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl Plugin for TerrainPlugin {
-    fn build(&self, app: &mut App) {
-        // TODO
-    }
-}
-
-impl TerrainPlugin {
-    pub fn new() -> Self {
-        Self {}
-    }
+fn init_terrain(mut terrain: ResMut<TerrainManager>) {
+    terrain.init_terrain();
 }
